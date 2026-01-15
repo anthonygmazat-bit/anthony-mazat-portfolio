@@ -226,27 +226,35 @@
             justify-content: center;
         }
 
-        .profile-icon {
-            width: 280px;
-            height: 280px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 8rem;
-            box-shadow: var(--shadow);
-            margin-bottom: 20px;
+        .profile-photo-container {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 30px;
             position: relative;
-            overflow: hidden;
         }
 
-        .profile-icon img {
+        .profile-photo {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
             object-position: center;
+            box-shadow: var(--shadow);
+            border: 5px solid var(--white);
+            background-color: #f1f5f9;
+        }
+
+        .profile-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            z-index: -1;
+            opacity: 0.1;
         }
 
         .profile-title {
@@ -660,10 +668,9 @@
                 left: 30px;
             }
             
-            .profile-icon {
-                width: 220px;
-                height: 220px;
-                font-size: 6rem;
+            .profile-photo-container {
+                width: 280px;
+                height: 280px;
             }
             
             .projects-grid {
@@ -716,10 +723,9 @@
                 justify-content: center;
             }
             
-            .profile-icon {
-                width: 180px;
-                height: 180px;
-                font-size: 5rem;
+            .profile-photo-container {
+                width: 240px;
+                height: 240px;
             }
             
             .projects-grid {
@@ -755,10 +761,9 @@
                 padding: 10px 20px;
             }
             
-            .profile-icon {
-                width: 150px;
-                height: 150px;
-                font-size: 4rem;
+            .profile-photo-container {
+                width: 200px;
+                height: 200px;
             }
             
             .project-card {
@@ -831,24 +836,30 @@
                 </div>
                 
                 <div class="hero-image">
-                    <div class="profile-icon">
-                        <!-- Replace this div with your image -->
-                        <!-- <img src="your-image-url.jpg" alt="Anthony Mazat"> -->
-                        <i class="fas fa-user-tie"></i>
+                    <div class="profile-photo-container">
+                        <!-- ============================================= -->
+                        <!-- REPLACE THIS IMAGE URL WITH YOUR PHOTO URL -->
+                        <!-- ============================================= -->
+                        <img src="https://via.placeholder.com/500x500/2563eb/ffffff?text=Add+Your+Photo+Here" 
+                             alt="Anthony Mazat - Marketing Professional" 
+                             class="profile-photo">
+                        <!-- ============================================= -->
+                        <!-- INSTRUCTIONS: -->
+                        <!-- 1. Upload your photo to GitHub or ImgBB -->
+                        <!-- 2. Get the direct image URL -->
+                        <!-- 3. Replace the src="..." above with your URL -->
+                        <!-- Example: src="https://i.ibb.co/your-image.jpg" -->
+                        <!-- ============================================= -->
                     </div>
                     <div class="profile-title">
                         <!-- Title row 1 -->
                         <div class="title-row">
                             <div class="title-icon">
-                                <!-- Replace this with your icon image -->
-                                <!-- <img src="marketing-icon.png" alt="Marketing Icon"> -->
                                 <i class="fas fa-bullhorn"></i>
                             </div>
                             <span>Marketing Coordinator</span>
                             <span class="title-divider">|</span>
                             <div class="title-icon">
-                                <!-- Replace this with your icon image -->
-                                <!-- <img src="seo-icon.png" alt="SEO Icon"> -->
                                 <i class="fas fa-search"></i>
                             </div>
                             <span>SEO Specialist</span>
@@ -857,15 +868,11 @@
                         <!-- Title row 2 -->
                         <div class="title-row">
                             <div class="title-icon">
-                                <!-- Replace this with your icon image -->
-                                <!-- <img src="content-icon.png" alt="Content Icon"> -->
                                 <i class="fas fa-pen-fancy"></i>
                             </div>
                             <span>Content Creator</span>
                             <span class="title-divider">|</span>
                             <div class="title-icon">
-                                <!-- Replace this with your icon image -->
-                                <!-- <img src="crm-icon.png" alt="CRM Icon"> -->
                                 <i class="fas fa-chart-line"></i>
                             </div>
                             <span>CRM Strategist</span>
@@ -1064,7 +1071,7 @@
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>Product Marketing Booklet</h3>
-                    <p>In-depth product booklet for X-Ray Reclaim showcasing technical specifications and application benefits. This comprehensive marketing collateral was distributed at tradeshows and helped generate 20+ qualified leads.</p>
+                    <p>In-depth product booklet for X-Ray Reclaim showcasing technical specifications and application benefits. This comprehensive marketing collateral was distributed at tradeshows and converted at a rate of 22% to qualified leads.</p>
                     <div class="project-tags">
                         <span class="project-tag">Product Marketing</span>
                         <span class="project-tag">Collateral Design</span>
@@ -1079,7 +1086,7 @@
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3>YouTube Shorts Video Content</h3>
-                    <p>Short-form video content created for YouTube to demonstrate product features and engage with a younger audience. This video increased channel subscribers by 15% in the first month.</p>
+                    <p>Short-form video content created for YouTube to demonstrate product features and engage with a younger audience. This video achieved 5,000+ views and increased channel subscribers by 15% in the first month.</p>
                     <div class="project-tags">
                         <span class="project-tag">Video Marketing</span>
                         <span class="project-tag">YouTube Shorts</span>
