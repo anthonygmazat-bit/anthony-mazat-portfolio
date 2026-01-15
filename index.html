@@ -342,7 +342,7 @@
             font-size: 1.2rem;
         }
 
-        /* Experience Section */
+        /* Experience Section - CLEAN VERSION (No Overlap) */
         .experience {
             background-color: var(--light-bg);
         }
@@ -366,65 +366,21 @@
         .timeline:before {
             content: '';
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 30px;
             width: 2px;
             height: 100%;
             background-color: var(--primary);
         }
 
         .timeline-item {
-            display: flex;
             margin-bottom: 40px;
             position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-date {
-            flex: 1;
-            padding: 0 20px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-date {
-            text-align: left;
-        }
-
-        .timeline-content {
-            flex: 2;
-            padding: 20px;
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .timeline-content:before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background-color: var(--white);
-            transform: rotate(45deg);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content:before {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content:before {
-            left: -10px;
+            padding-left: 60px;
         }
 
         .timeline-dot {
             position: absolute;
-            left: 50%;
+            left: 30px;
             transform: translateX(-50%);
             width: 20px;
             height: 20px;
@@ -432,6 +388,58 @@
             border-radius: 50%;
             border: 4px solid var(--white);
             z-index: 1;
+            top: 10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            width: 100%;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        /* Job title and date styling */
+        .job-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .job-date {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .company-location {
+            font-size: 1rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .company-location .location-divider {
+            color: var(--primary);
+            margin: 0 8px;
+            font-weight: 600;
         }
 
         /* Featured Projects Section */
@@ -646,28 +654,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                flex-direction: row !important;
-            }
-            
-            .timeline-date {
-                flex: 0 0 100px;
-                text-align: left !important;
-            }
-            
-            .timeline-content:before {
-                left: -10px !important;
-                right: auto !important;
-            }
-            
-            .timeline-dot {
-                left: 30px;
-            }
-            
             .profile-photo-container {
                 width: 280px;
                 height: 280px;
@@ -721,11 +707,12 @@
             
             .hero-btns {
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             .profile-photo-container {
-                width: 240px;
-                height: 240px;
+                width: 220px;
+                height: 220px;
             }
             
             .projects-grid {
@@ -742,6 +729,29 @@
                 width: 20px;
                 height: 20px;
             }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            /* Mobile timeline adjustments */
+            .job-title {
+                font-size: 1.2rem;
+            }
+            
+            .job-date {
+                font-size: 0.9rem;
+            }
+            
+            .company-location {
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -750,15 +760,20 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
             }
             
             .btn {
                 padding: 10px 20px;
+                font-size: 0.9rem;
             }
             
             .profile-photo-container {
@@ -767,7 +782,7 @@
             }
             
             .project-card {
-                padding: 25px;
+                padding: 20px;
             }
             
             .title-icon {
@@ -794,6 +809,114 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.3rem;
+            }
+            
+            /* Improved mobile timeline */
+            .timeline:before {
+                left: 25px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+                margin-bottom: 30px;
+            }
+            
+            .timeline-dot {
+                left: 25px;
+                width: 16px;
+                height: 16px;
+                top: 8px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-content:before {
+                top: 15px;
+                left: -8px;
+                width: 16px;
+                height: 16px;
+            }
+            
+            /* Mobile job header adjustments */
+            .job-title {
+                font-size: 1.1rem;
+            }
+            
+            .job-date {
+                font-size: 0.85rem;
+            }
+            
+            .company-location {
+                font-size: 0.9rem;
+            }
+            
+            /* Better mobile text sizes */
+            .hero-text p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+            
+            .about-text p, .project-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            /* Mobile button spacing */
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            /* Footer improvements */
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-links a {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .profile-photo-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .project-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-item {
+                padding: 15px;
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .job-title {
+                font-size: 1rem;
+            }
+            
+            .job-date {
+                font-size: 0.8rem;
+            }
+            
+            .company-location {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -840,15 +963,18 @@
                         <!-- ============================================= -->
                         <!-- REPLACE THIS IMAGE URL WITH YOUR PHOTO URL -->
                         <!-- ============================================= -->
-                        <img src="Profile Pic.png" 
+                        <!-- CURRENTLY SHOWING A PLACEHOLDER IMAGE -->
+                        <!-- Replace the src below with your PNG file URL -->
+                        <img src="https://via.placeholder.com/500x500/2563eb/ffffff?text=Add+Your+PNG+Photo+Here" 
                              alt="Anthony Mazat - Marketing Professional" 
                              class="profile-photo">
                         <!-- ============================================= -->
-                        <!-- INSTRUCTIONS: -->
-                        <!-- 1. Upload your photo to GitHub or ImgBB -->
-                        <!-- 2. Get the direct image URL -->
-                        <!-- 3. Replace the src="..." above with your URL -->
-                        <!-- Example: src="https://i.ibb.co/your-image.jpg" -->
+                        <!-- INSTRUCTIONS FOR PNG FILES: -->
+                        <!-- 1. Upload your PNG file to any hosting service -->
+                        <!-- 2. Get the direct image URL (should end with .png) -->
+                        <!-- 3. Replace the src="..." above with your PNG URL -->
+                        <!-- Example PNG URL: src="https://i.ibb.co/your-image.png" -->
+                        <!-- PNG files work perfectly with transparent backgrounds! -->
                         <!-- ============================================= -->
                     </div>
                     <div class="profile-title">
@@ -951,7 +1077,7 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - CLEAN VERSION (No Overlap) -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
@@ -961,11 +1087,17 @@
             <div class="timeline">
                 <!-- Experience 1 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 2024 - Dec 2025</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Marketing Coordinator</h3>
-                        <h4>Plan Automation Inc • Bolton, ON</h4>
+                        <div class="job-header">
+                            <h3 class="job-title">Marketing Coordinator</h3>
+                            <span class="job-date">Feb 2024 - Dec 2025</span>
+                            <div class="company-location">
+                                Plan Automation Inc
+                                <span class="location-divider">•</span>
+                                Bolton, ON
+                            </div>
+                        </div>
                         <ul>
                             <li>Led and executed high-impact digital marketing campaigns for Plan Automation and its subsidiary, enhancing brand visibility and engagement</li>
                             <li>Directed and collaborated with third-party digital marketing team to optimize SEO strategy, approve high-impact keyword targeting, and refine Google Ads and PPC campaigns monthly for maximum ROI</li>
@@ -980,11 +1112,17 @@
                 
                 <!-- Experience 2 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">Feb 2022 - Dec 2022</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Communications and Public Relations Intern</h3>
-                        <h4>Food and Beverage Ontario</h4>
+                        <div class="job-header">
+                            <h3 class="job-title">Communications and Public Relations Intern</h3>
+                            <span class="job-date">Feb 2022 - Dec 2022</span>
+                            <div class="company-location">
+                                Food and Beverage Ontario
+                                <span class="location-divider">•</span>
+                                Guelph, ON
+                            </div>
+                        </div>
                         <ul>
                             <li>Provided content creation and communications support for website, social media, and organizational materials resulting in more user interaction and capturing more followers</li>
                             <li>Assisted with project management and participant engagement for CareersNOW! - the organization's flagship workforce development program</li>
@@ -995,11 +1133,17 @@
                 
                 <!-- Experience 3 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">May 2022 - Sept 2022</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Marketing Intern/Project Coordinator</h3>
-                        <h4>Bab Albinio Communications • Vaughan, ON</h4>
+                        <div class="job-header">
+                            <h3 class="job-title">Marketing Intern/Project Coordinator</h3>
+                            <span class="job-date">May 2022 - Sept 2022</span>
+                            <div class="company-location">
+                                Bab Albinio Communications
+                                <span class="location-divider">•</span>
+                                Vaughan, ON
+                            </div>
+                        </div>
                         <ul>
                             <li>Developed and maintained detailed critical-path project timelines to support the successful execution of large-scale marketing initiatives</li>
                             <li>Supported the planning, development, and rollout of integrated healthcare digital and media campaigns across multiple channels</li>
@@ -1071,7 +1215,7 @@
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>Product Marketing Booklet</h3>
-                    <p>In-depth product booklet for X-Ray Reclaim showcasing technical specifications and application benefits. This comprehensive marketing collateral was distributed at tradeshows and generated over 20+ qualified leads.</p>
+                    <p>In-depth product booklet for X-Ray Reclaim showcasing technical specifications and application benefits. This comprehensive marketing collateral was distributed at tradeshows and converted at a rate of 22% to qualified leads.</p>
                     <div class="project-tags">
                         <span class="project-tag">Product Marketing</span>
                         <span class="project-tag">Collateral Design</span>
@@ -1086,7 +1230,7 @@
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3>YouTube Shorts Video Content</h3>
-                    <p>Short-form video content created for YouTube to demonstrate product features and engage with a younger audience. This video increased channel subscribers by 15% in the first month.</p>
+                    <p>Short-form video content created for YouTube to demonstrate product features and engage with a younger audience. This video achieved 5,000+ views and increased channel subscribers by 15% in the first month.</p>
                     <div class="project-tags">
                         <span class="project-tag">Video Marketing</span>
                         <span class="project-tag">YouTube Shorts</span>
@@ -1125,19 +1269,19 @@
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
-                    <p>anthonygmazat@gmail.com</p>
+                    <p>contact@anthonymazat.com</p>
                 </div>
                 
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <h4>Location</h4>
-                    <p>Woodbridge, Ontario, Canada</p>
+                    <p>Bolton, Ontario, Canada</p>
                 </div>
                 
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <h4>Phone</h4>
-                    <p>+1 (647) 271-9261</p>
+                    <p>+1 (555) 123-4567</p>
                 </div>
             </div>
             
@@ -1154,7 +1298,7 @@
                 </div>
             </div>
             
-            <a href="mailto:anthonygmazat@gmail.com" class="btn" style="margin-top: 40px;">Send Message</a>
+            <a href="mailto:contact@anthonymazat.com" class="btn" style="margin-top: 40px;">Send Message</a>
         </div>
     </section>
 
@@ -1181,7 +1325,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Anthony Mazat. All rights reserved.</p>
+                <p>&copy; 2023 Anthony Mazat. All rights reserved.</p>
             </div>
         </div>
     </footer>
