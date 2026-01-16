@@ -342,7 +342,7 @@
             font-size: 1.2rem;
         }
 
-        /* Experience Section - CLEAN VERSION (No Overlap) */
+        /* Experience Section - UPDATED BULLET POINT SPACING */
         .experience {
             background-color: var(--light-bg);
         }
@@ -392,7 +392,7 @@
         }
 
         .timeline-content {
-            padding: 20px;
+            padding: 25px 25px 20px 25px; /* Increased padding for better spacing */
             background-color: var(--white);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -403,7 +403,7 @@
         .timeline-content:before {
             content: '';
             position: absolute;
-            top: 20px;
+            top: 25px; /* Adjusted to match new padding */
             left: -10px;
             width: 20px;
             height: 20px;
@@ -413,7 +413,7 @@
 
         /* Job title and date styling */
         .job-header {
-            margin-bottom: 15px;
+            margin-bottom: 20px; /* Increased margin for better spacing */
         }
 
         .job-title {
@@ -440,6 +440,70 @@
             color: var(--primary);
             margin: 0 8px;
             font-weight: 600;
+        }
+
+        /* Improved bullet point spacing */
+        .timeline-content ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            margin-bottom: 12px; /* Increased spacing between bullet points */
+            line-height: 1.6;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .timeline-content li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Education Section Styling */
+        .education-details {
+            margin-top: 10px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .degree-type {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Professional Qualifications List */
+        .qualifications-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .qualifications-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .qualifications-list li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         /* Featured Projects Section */
@@ -752,6 +816,15 @@
             .company-location {
                 font-size: 0.95rem;
             }
+            
+            /* Mobile bullet point adjustments */
+            .timeline-content {
+                padding: 20px 20px 15px 20px;
+            }
+            
+            .timeline-content li {
+                margin-bottom: 10px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -829,11 +902,11 @@
             }
             
             .timeline-content {
-                padding: 15px;
+                padding: 18px 18px 14px 18px;
             }
             
             .timeline-content:before {
-                top: 15px;
+                top: 18px;
                 left: -8px;
                 width: 16px;
                 height: 16px;
@@ -918,6 +991,16 @@
             .company-location {
                 font-size: 0.85rem;
             }
+            
+            /* Small screen bullet point adjustments */
+            .timeline-content {
+                padding: 15px 15px 12px 15px;
+            }
+            
+            .timeline-content li {
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -965,7 +1048,7 @@
                         <!-- ============================================= -->
                         <!-- CURRENTLY SHOWING A PLACEHOLDER IMAGE -->
                         <!-- Replace the src below with your PNG file URL -->
-                        <img src="Profile Pic.png" 
+                        <img src="https://via.placeholder.com/500x500/2563eb/ffffff?text=Add+Your+PNG+Photo+Here" 
                              alt="Anthony Mazat - Marketing Professional" 
                              class="profile-photo">
                         <!-- ============================================= -->
@@ -1009,7 +1092,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - UPDATED WITH UNIVERSITY AND DEGREE -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -1018,7 +1101,7 @@
             
             <div class="about-content">
                 <div class="about-text">
-                    <p>Marketing professional with a strong educational background from Guelph University and extensive hands-on experience in digital marketing, campaign management, and brand strategy.</p>
+                    <p>Marketing professional with a strong educational background from the University of Guelph and extensive hands-on experience in digital marketing, campaign management, and brand strategy.</p>
                     <p>I specialize in creating and executing high-impact marketing campaigns, optimizing digital presence, and leveraging data-driven insights to achieve business objectives. My approach combines creativity with analytical thinking to deliver measurable results.</p>
                     
                     <div class="skills-list">
@@ -1060,24 +1143,33 @@
                 <div class="about-education">
                     <h3>Education</h3>
                     <div class="education-item">
-                        <h4>Guelph University</h4>
-                        <p class="location">Guelph, Canada</p>
-                        <p>Relevant Coursework: Digital Marketing, International Marketing, Marketing Strategy, Website Design and Development, Consumer Behavior, Marketing Analytics</p>
+                        <h4>University of Guelph</h4>
+                        <p class="location">Guelph, Ontario</p>
+                        <div class="education-details">
+                            <p class="degree">Bachelor of Commerce, Hons. Marketing Management Co-op</p>
+                            <p class="degree-type">Honors Degree with Co-operative Education</p>
+                            <p>Relevant Coursework: Digital Marketing, International Marketing, Marketing Strategy, Website Design and Development, Consumer Behavior, Marketing Analytics</p>
+                        </div>
                     </div>
                     
                     <h3>Professional Qualifications</h3>
-                    <ul>
-                        <li>Highly proficient in Microsoft Office Suite, Adobe Suite, Canva, Salesforce and CRM systems</li>
-                        <li>Proven ability to thrive in team-oriented environments</li>
-                        <li>Skilled in developing engaging content across various social media platforms</li>
-                        <li>Exceptional communicator with strong written, verbal, and presentation skills</li>
+                    <ul class="qualifications-list">
+                        <li>Highly proficient in Microsoft Office Suite, Adobe Creative Cloud, Canva, Salesforce and CRM systems (HubSpot, ZoomInfo)</li>
+                        <li>Proven ability to thrive in team-oriented environments, fostering collaboration and synergy to drive successful outcomes</li>
+                        <li>Skilled in developing engaging content across various social media platforms and designing functional, user-friendly websites in WordPress and HTML</li>
+                        <li>Exceptional communicator with strong written, verbal, and presentation skills, adept at conveying complex ideas with clarity and impact</li>
+                        <li>Extensive experience in editing, proofreading, and maintaining high-quality standards for marketing projects and brand communications</li>
+                        <li>Strategic thinker with a keen ability to identify opportunities and mitigate risks in project management and decision-making</li>
+                        <li>Data-driven marketer with expertise in Google Analytics, SEO optimization, and performance measurement</li>
+                        <li>Experienced in managing cross-functional projects and coordinating with external agencies and stakeholders</li>
+                        <li>Proficient in developing and managing marketing budgets with a focus on ROI optimization</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section - CLEAN VERSION (No Overlap) -->
+    <!-- Experience Section - IMPROVED BULLET POINT SPACING -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
